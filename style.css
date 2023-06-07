@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Exo", sans-serif;
+    background-color: #121212;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .title {
+        color: black;
+    }
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden; 
+}
+
+#flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 260px;
+}
+
+.title {
+    font-size: 15vh;
+    color: white;
+}
+
+.nav {
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav li {
+    display: flex;
+    padding: 0px 20px;
+    padding-top: 10px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 3.6vh;
+}
+
+.nav li p {
+    text-decoration: none;
+    color: white;
+    font-size: 1.6em;
+}
+
+.nav li a:hover {
+    color: #595a5b !important;
+}
+
+.nav li p:hover {
+    color: #595a5b !important;
+}
