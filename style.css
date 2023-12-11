@@ -3,210 +3,120 @@
     src: url(./src/Satoshi-Variable.ttf);
 }
 
-:root {
-    --bgColor: #121212;
-    --bgColor2: #121212;
-    --accentColor: #E6E6E6;
-    --accentColor2: #75ffff;
-    --textColor: #acaaaa;
-    --delay: .3s;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Satoshi;
+    background-color: #121212;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.box2{
-    width: 1000px;
-    padding: 1px;
-    text-align: center;
-    margin: auto;
-    margin-top: 1%;
-    color: white;
-    font-family: Satoshi;
-}
-
-.box{
-    width: 400px;
-    padding: 1px;
-    text-align: center;
-    margin: auto;
-    margin-top: 1%;
-    color: white;
-    font-family: Satoshi;
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .title {
+        color: black;
+    }
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    font-family: Satoshi;
-    opacity: 0;
-    animation: 1s ease-out var(--delay) 1 transitionAnimation; /* duration/timing-function/delay/iterations/name */
-    animation-fill-mode: forwards;
-    background-color: black;
-    min-height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    overflow-y: hidden;
+    overflow-x: hidden; 
 }
 
-#profilePicture, #profilePicture img {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    display: block;
-    margin: 35px auto 20px;
-    border-radius: 50%;
-    -webkit-tap-highlight-color: transparent;
-}
-
-#userName {
-    color: var(--accentColor);
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1.25;
-    display: block;
-    font-family: Satoshi;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-}
-
-#links {
-    align-items: center;
-    text-align: center;
-    max-width: 675px;
-    width: auto;
-    display: block;
-    margin: 27px auto;
-}
-
-.fa-solid {
-    float: left;
-}
-
-.fa-brands {
-    float: left;
-}
-
-.fab {
-    float: left;
-}
-
-.link {
-    font-family: Satoshi;
-    position: relative;
-    background-color: transparent;
-    color: var(--accentColor);
-    border: solid rgb(72, 72, 72) 2px;
-    border-radius: 10px;
-    font-size: 1em;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: block;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 13px; /* 17px */
-    text-decoration: none;
-    /* transition: all .25s cubic-bezier(.08, .59, .29, .99); */
-    -webkit-tap-highlight-color: transparent;
-}
-
-@media (hover: hover) {
-    .link:hover {
-        background-color: var(--accentColor);
-        color: var(--bgColor);
-    }
-}
-
-.link:active {
-    background-color: var(--accentColor);
-    color: var(--bgColor);
-}
-
-.prolink {
-    position: relative;
-    background-color: transparent;
-    color: var(--accentColor2);
-    border: solid var(--accentColor2) 2px;
-    border-radius: 10px;
-    font-size: 1rem;
-    text-align: center;
-    display: block;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding: 10px; /* 17px */
-    text-decoration: none;
-    /* transition: all .25s cubic-bezier(.08, .59, .29, .99); */
-    -webkit-tap-highlight-color: transparent;
-}
-
-@media (hover: hover) {
-    .prolink:hover {
-        background-color: var(--accentColor2);
-        color: var(--bgColor);
-    }
-}
-
-.prolink:active {
-    background-color: var(--accentColor2);
-    color: var(--bgColor);
-}
-
-#hashtag {
-    position: relative;
-    padding-bottom: 20px;
-    color: var(--accentColor);
-    font-size: 1rem;
-    display: block;
-    font-family: var(--font);
-    width: 100%;
-    text-align: center;
-    overflow: hidden;
-    background: linear-gradient(90deg, var(--bgColor), var(--accentColor), var(--bgColor));
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: animate 3s linear var(--delay) infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
-}
-
-@keyframes transitionAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes animate {
-    0% {
-      background-position: -500%;
-    }
-    100% {
-      background-position: 500%;
-    }
-}
-
-
-.overlay {
+#flexbox {
     display: flex;
-    align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 2;
-    visibility: hidden;
-    opacity: 0;
-    overflow: hidden;
-    transition: .5s ease-in-out;
+    align-items: center;
+    width: auto;
+    height: 100vh;
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: rgb(124, 124, 124);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 3px 0;
+    position: absolute;
+    z-index: 1;
+    width: 10vh;
+    top: 120%;
+    left: 50%;
+    margin-left: -5vh;
+    opacity: 0;
+    transition: opacity 1s;
+}
+  
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgb(124, 124, 124) transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.title {
+    position: absolute;
+    text-align: center;
+    font-size: 18vh;
+    color: white;
+}
+
+.nav {
+    height: auto;
+    position: relative;
+    top: 13vh;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav li {
+    display: flex;
+    padding: 0px 20px;
+    padding-top: 10px;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav li p {
+    text-decoration: none;
+    color: white;
+    font-size: 1.6em;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 3.6vh;
+}
+
+.nav li a:hover {
+    color: #595a5b !important;
+}
+
+.nav li p:hover {
+    color: #595a5b !important;
+}
